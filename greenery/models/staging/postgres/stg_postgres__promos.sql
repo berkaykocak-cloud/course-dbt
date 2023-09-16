@@ -6,9 +6,9 @@ with source as(
 
 , renamed_recast as(
     select
-    promo_id
-    , discount
-    , status
+    promo_id AS promotion_id
+    , discount AS promotion_discount
+    , status AS promotion_status
     from source
 )
 

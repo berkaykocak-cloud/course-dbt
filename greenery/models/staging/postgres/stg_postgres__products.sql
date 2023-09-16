@@ -8,8 +8,8 @@ with source as(
     select
     product_id
     , name AS product_name
-    , price
-    , inventory
+    , price AS product_price
+    , inventory AS product_inventory
     from source
 )
 

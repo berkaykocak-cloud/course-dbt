@@ -93,26 +93,33 @@ models:
           - not_null
           - unique
       - name: product_name
-        description: Product name.
-      - name: price
-      - name: inventory
+        description: The name of the product. 
+      - name: product_price
+        description: The price of the product. 
+      - name: product_inventory
+        description: The total amount of product in the inventory. 
   - name: stg_postgres__promos
     description: This is the base table from Postgres describing the promotions.
     columns:
-      - name: promo_id
+      - name: promotion_id
+        description: Promotion primary key.
         tests:
           - not_null
           - unique
-      - name: discount
-      - name: status
+      - name: promotion_discount
+        description: The amount of discount in promotion.
+      - name: promotion_status
+        description: The status of the promotion. It can have two values which are active or inactive.
   - name: stg_postgres__users
     description: This is the base table from Postgres describing the users.
     columns:
       - name: user_id
+        description: User primary key.
         tests:
           - not_null
           - unique
       - name: address_id
+        description: Address primary key.
       - name: created_at
       - name: email
       - name: first_name
