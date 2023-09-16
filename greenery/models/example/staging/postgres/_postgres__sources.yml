@@ -2,8 +2,8 @@ version: 2
 
 sources:
  -  name: postgres # name of the source 
-    schema: raw  # this is the schema our raw data lives in
-    database: public  # this is the name of the database that our source data lives in
+    schema: public  # this is the schema our raw data lives in
+    database: raw  # this is the name of the database that our source data lives in
     tables:
       - name: addresses
       - name: events
