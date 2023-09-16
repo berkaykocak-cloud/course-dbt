@@ -6,7 +6,7 @@ with source as(
 
 , renamed_recast as(
     select
-    created_at
+    created_at AS event_created_at
     , event_id
     , event_type
     , order_id

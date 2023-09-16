@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_postgres__addresses
-    description: Base table from postgres describing addresses
+    description: This is the base table from Postgres describing the addresses.
     columns:
       - name: address_id
         description: Address primary key.
@@ -10,26 +10,37 @@ models:
           - not_null
           - unique
       - name: address
+        description: The address of the users. The address composes of a number and street/alley name. 
       - name: country
+        description: The country of the address that the users live in.
       - name: state
+        description: The state of the address that the users live in.
       - name: zipcode
+        description: The ZIP Code of the address that the users live in.
   - name: stg_postgres__events
-    description: Base table from postgres describing events
+    description: This is the base table from Postgres describing the events on the webpage.
     columns:
       - name: event_id
         description: Event primary key.
         tests:
           - not_null
           - unique
-      - name: created_at
+      - name: event_created_at
+        description: The timestamp that the event created at.
       - name: event_type
+        description: The type of the webpage event. This can be checkout, package_shipped, add_to_cart or page_view.
       - name: order_id
+        description: Order primary key.
       - name: page_url
+        description: The URL of the page that the event took place. 
       - name: product_id
+        description: Product primary key.
       - name: session_id
+        description: Session primary key.
       - name: user_id
+        description: User primary key.
   - name: stg_postgres__order_items
-    description: Base table from postgres describing order items.
+    description: This is the base table from Postgres describing the quantity of products in orders.
     columns:
       - name: order_id
         description: Order primary key.
@@ -38,7 +49,7 @@ models:
       - name: product_id
       - name: quantity
   - name: stg_postgres__orders
-    description: Base table from postgres describing orders.
+    description: This is the base table from Postgres describing the orders.
     columns:
       - name: order_id
         description: Order primary key.
@@ -58,7 +69,7 @@ models:
       - name: tracking_id
       - name: user_id
   - name: stg_postgres__products
-    description: Base table from postgres describing products
+    description: This is the base table from Postgres describing the products.
     columns:
       - name: product_id
         description: Product primary key.
@@ -70,7 +81,7 @@ models:
       - name: price
       - name: inventory
   - name: stg_postgres__promos
-    description: Base table from postgres describing promos
+    description: This is the base table from Postgres describing the promotions.
     columns:
       - name: promo_id
         tests:
@@ -79,7 +90,7 @@ models:
       - name: discount
       - name: status
   - name: stg_postgres__users
-    description: Base table from postgres describing users
+    description: This is the base table from Postgres describing the users.
     columns:
       - name: user_id
         tests:
