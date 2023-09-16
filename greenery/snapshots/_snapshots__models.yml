@@ -14,6 +14,9 @@ snapshots:
         description: The total amount of product in the inventory. This is a slowly changing dimension which have multiple values.
       - name: dbt_scd_id
         description: Slowly changing dimension primary key.
+        tests:
+          - not_null
+          - unique
       - name: dbt_updated_at
         description: The timestamp when the slowly changing dimension was updated. This is the inventory in our case.
       - name: dbt_valid_from
