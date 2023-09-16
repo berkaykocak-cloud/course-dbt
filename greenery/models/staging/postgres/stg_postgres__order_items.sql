@@ -8,7 +8,7 @@ with source as(
     select
     order_id
     , product_id
-    , quantity
+    , quantity AS order_quantity
     from source
 )
 
