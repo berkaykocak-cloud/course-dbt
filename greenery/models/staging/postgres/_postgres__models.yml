@@ -1,13 +1,63 @@
 version: 2
 
 models:
-  - name: stg_postgres__users
-    description: Base table from postgres describing users
+  - name: stg_postgres__addresses
+    description: Base table from postgres describing addresses
     columns:
-      - name: user_id
+      - name: address_id
+        description: Address primary key.
         tests:
           - not_null
           - unique
+      - name: address
+      - name: country
+      - name: state
+      - name: zipcode
+  - name: stg_postgres__events
+    description: Base table from postgres describing events
+    columns:
+      - name: event_id
+        description: Event primary key.
+        tests:
+          - not_null
+          - unique
+      - name: created_at
+      - name: event_type
+      - name: order_id
+      - name: page_url
+      - name: product_id
+      - name: session_id
+      - name: user_id
+  - name: stg_postgres__order_items
+    description: Base table from postgres describing order items.
+    columns:
+      - name: order_id
+        description: Order primary key.
+        tests:
+          - not_null
+          - unique
+      - name: product_id
+      - name: quantity
+  - name: stg_postgres__orders
+    description: Base table from postgres describing orders.
+    columns:
+      - name: order_id
+        description: Order primary key.
+        tests:
+          - not_null
+          - unique
+      - name: address_id
+      - name: created_at
+      - name: delivered_at
+      - name: estimated_delivery_at
+      - name: order_cost
+      - name: order_total
+      - name: promo_id
+      - name: shipping_cost
+      - name: shipping_service
+      - name: status
+      - name: tracking_id
+      - name: user_id
   - name: stg_postgres__products
     description: Base table from postgres describing products
     columns:
@@ -27,3 +77,19 @@ models:
         tests:
           - not_null
           - unique
+      - name: discount
+      - name: status
+  - name: stg_postgres__users
+    description: Base table from postgres describing users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+      - name: address_id
+      - name: created_at
+      - name: email
+      - name: first_name
+      - name: last_name
+      - name: phone_number
+      - name: updated_at
