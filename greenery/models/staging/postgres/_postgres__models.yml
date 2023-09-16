@@ -35,7 +35,6 @@ models:
         description: Order primary key.
         tests:
           - not_null
-          - unique
       - name: product_id
       - name: quantity
   - name: stg_postgres__orders
