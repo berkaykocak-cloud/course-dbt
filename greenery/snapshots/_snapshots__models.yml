@@ -1,0 +1,14 @@
+version: 2
+
+snapshots:
+  - name: products
+    description: This is the snapshot table of the source product that contains information about the products.
+    columns:
+      - name: product_id
+        description: Product primary key. This field will be duplicated in the snapshot since the values for the product is changing.
+      - name: product_name
+        description: The name of the product. 
+      - name: product_price
+        description: The price of the product. 
+      - name: product_inventory
+        description: The total amount of product in the inventory. This is a slowly changing dimension which have multiple values.
