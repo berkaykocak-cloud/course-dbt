@@ -61,17 +61,29 @@ models:
           - not_null
           - unique
       - name: address_id
-      - name: created_at
-      - name: delivered_at
-      - name: estimated_delivery_at
+        description: Address primary key.
+      - name: order_created_at
+        description: The timestamp that the order created at.
+      - name: order_delivered_at
+        description: The timestamp that the order delivered at.
+      - name: order_estimated_delivery_at
+        description: The estimated timestamp that the order would be delivered at.
       - name: order_cost
+        description: The cost of order.
       - name: order_total
+        description: Total cost of order which is a sum of order_cost and order_shipping_cost.
       - name: promo_id
-      - name: shipping_cost
-      - name: shipping_service
-      - name: status
-      - name: tracking_id
+        description: Promotion primary key.
+      - name: order_shipping_cost
+        description: The shipping cost for the order.
+      - name: order_shipping_service
+        description: The service provider for shipping. The provider can be ups, usps, fedex, dhl or NULL. 
+      - name: order_status
+        description: The status of the order. The status can be delivered, shipped or preparing.
+      - name: order_tracking_id
+        description: Unique key for tracking the order.
       - name: user_id
+        description: User primary key.
   - name: stg_postgres__products
     description: This is the base table from Postgres describing the products.
     columns:
