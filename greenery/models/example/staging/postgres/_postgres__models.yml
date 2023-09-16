@@ -11,4 +11,14 @@ models:
   - name: stg_postgres__products
     description: Base table from postgres describing products
     columns:
-      - name: 
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_postgres__promos
+    description: Base table from postgres describing promos
+    columns:
+      - name: promo_id
+        tests:
+          - not_null
+          - unique
