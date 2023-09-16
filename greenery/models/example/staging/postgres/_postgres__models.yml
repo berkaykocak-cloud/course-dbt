@@ -12,9 +12,14 @@ models:
     description: Base table from postgres describing products
     columns:
       - name: product_id
+        description: Product primary key.
         tests:
           - not_null
           - unique
+      - name: product_name
+        description: Product name.
+      - name: price
+      - name: inventory
   - name: stg_postgres__promos
     description: Base table from postgres describing promos
     columns:

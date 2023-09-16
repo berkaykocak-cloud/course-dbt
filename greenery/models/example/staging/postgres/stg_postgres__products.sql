@@ -7,7 +7,7 @@ with source as(
 , renamed_recast as(
     select
     product_id
-    , name
+    , name AS product_name
     , price
     , inventory
     from source
