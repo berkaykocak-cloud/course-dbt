@@ -6,9 +6,16 @@ sources:
     database: raw  # this is the name of the database that our source data lives in
     tables:
       - name: addresses
+        description: This is the source table that contains information about the addresses.
       - name: events
+        description: This is the source table that contains information about the tracking events on the website.
       - name: orders
+        description: This is the source table that contains information about the orders.
       - name: order_items
+        description: This is the source table that contains information about the quantity of products in orders.
       - name: products
+        description: This is the source table that contains information about the products.
       - name: promos
+        description: This is the source table that contains information about the promotions.
       - name: users
+        description: This is the source table that contains information about the users.
