@@ -72,7 +72,7 @@ models:
         description: The cost of order.
       - name: order_total
         description: Total cost of order which is a sum of order_cost and order_shipping_cost.
-      - name: promo_id
+      - name: promotion_id
         description: Promotion primary key.
       - name: order_shipping_cost
         description: The shipping cost for the order.

@@ -13,7 +13,7 @@ with source as(
     , order_cost
     , order_id
     , order_total
-    , promo_id
+    , promo_id AS promotion_id
     , shipping_cost AS order_shipping_cost
     , shipping_service AS order_shipping_service
     , status AS order_status
