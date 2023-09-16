@@ -1,8 +1,4 @@
 # Analytics engineering with dbt
 
-Template repository for the projects and environment of the course: Analytics engineering with dbt
+[The solutions of the first week's project](docs/project-week-1.md)
 
-> Please note that this sets some environment variables so if you create some new terminals please load them again.
-
-## License
-GPL-3.0
