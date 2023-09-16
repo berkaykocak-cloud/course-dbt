@@ -6,10 +6,15 @@
     target_schema = target.schema,
     strategy='check',
     unique_key='product_id',
-    check_cols=['inventory'],
+    check_cols=['product_inventory'],
    )
 }}
 
-  SELECT * FROM {{ source('postgres', 'products') }}
+  SELECT 
+    product_id
+    , name AS product_name
+    , price AS product_price
+    , inventory AS product_inventory
+  FROM {{ source('postgres', 'products') }}
 
 {% endsnapshot %}
