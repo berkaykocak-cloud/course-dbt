@@ -21,5 +21,5 @@ snapshots:
         description: The timestamp when the slowly changing dimension was updated. This is the inventory in our case.
       - name: dbt_valid_from
         description: The timestamp from when the observation for the inventory is valid.
-      - name: dbt_valid_from
+      - name: dbt_valid_to
         description: The timestamp until when the observation for the inventory is valid.
