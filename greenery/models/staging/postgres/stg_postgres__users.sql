@@ -11,8 +11,8 @@ with source as(
     , last_name
     , email
     , phone_number
-    , created_at
-    , updated_at
+    , created_at AS user_created_at
+    , updated_at AS user_updated_at
     , address_id
     from source
 )
