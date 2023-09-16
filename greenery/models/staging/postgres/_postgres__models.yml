@@ -17,6 +17,7 @@ models:
         description: The state of the address that the users live in.
       - name: zipcode
         description: The ZIP Code of the address that the users live in.
+
   - name: stg_postgres__events
     description: This is the base table from Postgres describing the events on the webpage.
     columns:
@@ -39,6 +40,7 @@ models:
         description: Session primary key.
       - name: user_id
         description: User primary key.
+
   - name: stg_postgres__order_items
     description: This is the base table from Postgres describing the quantity of products in orders.
     columns:
@@ -52,6 +54,7 @@ models:
           - not_null
       - name: order_quantity
         description: The quantity of the distinct product in the order. 
+
   - name: stg_postgres__orders
     description: This is the base table from Postgres describing the orders.
     columns:
@@ -84,6 +87,7 @@ models:
         description: Unique key for tracking the order.
       - name: user_id
         description: User primary key.
+
   - name: stg_postgres__products
     description: This is the base table from Postgres describing the products.
     columns:
@@ -98,6 +102,7 @@ models:
         description: The price of the product. 
       - name: product_inventory
         description: The total amount of product in the inventory. 
+
   - name: stg_postgres__promos
     description: This is the base table from Postgres describing the promotions.
     columns:
@@ -110,6 +115,7 @@ models:
         description: The amount of discount in promotion.
       - name: promotion_status
         description: The status of the promotion. It can have two values which are active or inactive.
+        
   - name: stg_postgres__users
     description: This is the base table from Postgres describing the users.
     columns:

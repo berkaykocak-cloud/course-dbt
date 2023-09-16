@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: products
+    description: This is the snapshot table of the source table for products.
+    columns:
+      - name: product_id
+        description: Product primary key. It will be duplicated now due to updates.
+      - name: product_name
+        description: The name of the product. 
+      - name: product_price
+        description: The price of the product. 
+      - name: product_inventory
+        description: The total amount of product in the inventory. This is the slowly changing dimension which is updated in snapshot.
