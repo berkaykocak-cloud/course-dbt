@@ -17,5 +17,5 @@ event_day
 , checkouts
 , package_shippeds
 , page_views
-, checkouts/page_views AS product_daily_cvr
+, div0(checkouts,page_views) AS product_daily_cvr
 FROM aggregation
