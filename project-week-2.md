@@ -30,7 +30,7 @@ On the other hand, the users that do not interact with the website, that do not 
 
 **Question 3:** Explain the product mart models you added. Why did you organize the models in the way you did?
 
-**Answer 3:** I have added one intermediate and one fact layer in my mart_product folder. The intermediate model int_product_events some heavy calculations are made to count distinct events per product on a daily basis. These events include page_views, add_to_carts, checkouts and package_shippeds. On the fact_product_events layer the events events from the intermediate layer have been enriched with data from other tables. The additional data includes product_name and product_price.
+**Answer 3:** I have added one intermediate and one fact layer in the intermediate and fact folders correspondingly. In the intermediate model int_product_events some heavy calculations are made to count distinct events per product on a daily basis. These events include page_views, add_to_carts, checkouts and package_shippeds. On the fact_product_events layer the events from the intermediate layer have been enriched with data from other tables. The additional data includes product_name and product_price.
 
 ## PART 2. Tests
 
