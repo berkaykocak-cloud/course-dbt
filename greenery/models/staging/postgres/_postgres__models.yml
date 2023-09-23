@@ -30,6 +30,9 @@ models:
         description: The timestamp that the event created at.
       - name: event_type
         description: The type of the webpage event. This can be checkout, package_shipped, add_to_cart or page_view.
+        tests:
+          - accepted_values:
+              values: ['checkout', 'package_shipped', 'add_to_cart', 'page_view']
       - name: order_id
         description: Order primary key.
       - name: page_url
@@ -54,6 +57,8 @@ models:
           - not_null
       - name: order_quantity
         description: The quantity of the distinct product in the order. 
+        tests:
+          - positive_values
 
   - name: stg_postgres__orders
     description: This is the base table from Postgres describing the orders.
@@ -73,16 +78,25 @@ models:
         description: The estimated timestamp that the order would be delivered at.
       - name: order_cost
         description: The cost of order.
+        tests:
+          - positive_values
       - name: order_total
         description: Total cost of order which is a sum of order_cost and order_shipping_cost.
+        tests:
+          - positive_values
       - name: promotion_id
         description: Promotion primary key.
       - name: order_shipping_cost
         description: The shipping cost for the order.
+        tests:
+          - positive_values
       - name: order_shipping_service
         description: The service provider for shipping. The provider can be ups, usps, fedex, dhl or NULL. 
       - name: order_status
         description: The status of the order. The status can be delivered, shipped or preparing.
+        tests:
+          - accepted_values:
+              values: ['delivered', 'shipped', 'preparing']
       - name: order_tracking_id
         description: Unique key for tracking the order.
       - name: user_id
@@ -100,8 +114,12 @@ models:
         description: The name of the product. 
       - name: product_price
         description: The price of the product. 
+        tests:
+          - positive_values
       - name: product_inventory
         description: The total amount of product in the inventory. 
+        tests:
+          - positive_values
 
   - name: stg_postgres__promos
     description: This is the base table from Postgres describing the promotions.
@@ -115,6 +133,9 @@ models:
         description: The amount of discount in promotion.
       - name: promotion_status
         description: The status of the promotion. It can have two values which are active or inactive.
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive']
         
   - name: stg_postgres__users
     description: This is the base table from Postgres describing the users.
