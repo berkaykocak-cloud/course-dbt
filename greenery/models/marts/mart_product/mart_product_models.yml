@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: int_product_events
+    description: This is a table to aggregate events daily on a product level.
+    columns:
+      - name: event_day
+        description: The day that the event occured.
+      - name: product_id
+        description: The product id related to the event.
+      - name: add_to_carts
+        description: The number of successful add to cart clicks per product on the event day. 
+      - name: checkouts
+        description: The number of successful checkouts per product on the event day. 
+      - name: package_shippeds
+        description: The number of shipped packages per product on the event day. 
+      - name: page_views
+        description: The number of page views per product on the event day.
+      - name: product_daily_cvr
+        description: The daily conversion rate for the products. The conversion rate is calculated as = checkouts/page_views. 
+
+  - name: fact_product_events
+    description: This is a table that contains product attributes with daily events.
+    columns:
+      - name: event_day
+        description: The day that the event occured.
+      - name: product_name
+        description: The name of the product.
+      - name: product_price
+        description: The price of the product.
+      - name: product_id
+        description: The product id related to the event
+      - name: add_to_carts
+        description: The number of successful add to cart clicks per product on the event day. 
+      - name: checkouts
+        description: The number of successful checkouts per product on the event day. 
+      - name: package_shippeds
+        description: The number of shipped packages per product on the event day. 
+      - name: page_views
+        description: The number of page views per product on the event day.
+      - name: product_daily_cvr
+        description: The daily conversion rate for the products. The conversion rate is calculated as = checkouts/page_views. 
