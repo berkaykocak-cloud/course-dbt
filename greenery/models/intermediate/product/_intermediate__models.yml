@@ -18,3 +18,12 @@ models:
         description: The number of page views per product on the event day.
       - name: product_daily_cvr
         description: The daily conversion rate for the products. The conversion rate is calculated as = checkouts/page_views. 
+  - name: int_session_timing
+    description: This is a table to extract useful information from sessions such as creation and end time.
+    columns:
+      - name: session_id
+        description: Session primary key.
+      - name: session_started_at
+        description: The first timestamp in a session when an event occured.
+      - name: session_ended_at
+        description: The last timestamp in a session when an event occured.
