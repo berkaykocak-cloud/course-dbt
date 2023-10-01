@@ -11,8 +11,7 @@ SELECT *
 FROM {{ref('int_session_timing')}}
 )
 
-{% set event_types= ['add_to_cart', 'checkout', 'package_shipped', 'page_view'
-] %}
+{% set event_types= dbt_utils.get_column_values(table=ref('stg_postgres__events'), column='event_type') %}
 
 SELECT
   e.session_id
