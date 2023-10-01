@@ -1,0 +1,10 @@
+version: 2
+
+macros:
+  - name: sum_of_categories
+    description: This is a function to sum total number of instances of a categorical variable in a column.
+    arguments:
+      - name: column_name
+        description: The name of the column.
+      - name: category_name
+        description: The name of the category in the categorical variable.
