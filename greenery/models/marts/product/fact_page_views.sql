@@ -1,5 +1,10 @@
 
-{{config(materialized='table')}}
+{{
+  config(
+    materialized='table'
+    , post_hook= "{{ grant('reporting')}}"
+    )
+}}
 
 WITH session_timing_agg AS (
 SELECT *
