@@ -62,6 +62,9 @@ models:
 
   - name: stg_postgres__orders
     description: This is the base table from Postgres describing the orders.
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "order_cost + order_shipping_cost = order_total"
     columns:
       - name: order_id
         description: Order primary key.
