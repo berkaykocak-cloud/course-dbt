@@ -1,14 +1,17 @@
 {{config(materialized='view')}}
 
+{% set event_types= dbt_utils.get_column_values(table=ref('stg_postgres__events'), column='event_type') %}
+
 WITH aggregation AS(
 SELECT 
   DATE_TRUNC('day',event_created_at) AS event_day
-  , product_id
-  , SUM(CASE WHEN event_type ='add_to_cart' THEN 1 ELSE 0 END) AS add_to_carts
-  , SUM(CASE WHEN event_type ='checkout' THEN 1 ELSE 0 END) AS checkouts
-  , SUM(CASE WHEN event_type ='package_shipped' THEN 1 ELSE 0 END) AS package_shippeds
-  , SUM(CASE WHEN event_type ='page_view' THEN 1 ELSE 0 END) AS page_views
-FROM {{ref('stg_postgres__events')}}
+  , COALESCE(e.product_id, oi.product_id) AS product_id
+  {% for event_type in event_types %}
+  , {{sum_of_categories('event_type',event_type)}} AS {{event_type}}s
+  {% endfor %}
+FROM {{ref('stg_postgres__events')}} e
+LEFT JOIN {{ref('stg_postgres__order_items')}} oi
+  ON oi.order_id=e.order_id
 GROUP BY 1,2 )
 
 SELECT 
