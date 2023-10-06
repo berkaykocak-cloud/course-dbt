@@ -1,0 +1,14 @@
+version: 2
+
+exposures:
+  - name: product_funnel_dashboard
+    type: dashboard
+    maturity: medium
+    url: https://app.sigmacomputing.com/corise-dbt/workbook/Initial-Trials-LIjZM01XQVQhn6H7zn8eE
+    tags: ['product']
+    description: This is a dashboard that shows statistics about the product funnel
+    depends_on: 
+      - ref('fact_page_views')
+    owner:
+      name: Berkay
+      email: berkay.kocak@contentful.com
