@@ -34,6 +34,8 @@ package_shipped_percentage: 57.96%
 
 According to this analysis, the largest dropoff points of the funnel seem to be add_to_cart from page_view and checkout from add_to_cart. All of the users that created a session have a page view, and a big majority of customers who did a checkout received their package. 
 
+BONUS: The product funnel: https://app.sigmacomputing.com/corise-dbt/workbook/Product-Funnel-5ATs6swIb7aO5Awwmhuk1g
+
 **SQL:**
 ```
 WITH numbers as(
