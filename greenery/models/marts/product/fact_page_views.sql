@@ -13,6 +13,7 @@ FROM {{ref('int_session_timing')}}
 
 {% set event_types= dbt_utils.get_column_values(table=ref('stg_postgres__events'), column='event_type') %}
 
+WITH events AS(
 SELECT
   e.session_id
   , e.user_id
@@ -29,3 +30,12 @@ LEFT JOIN {{ref('stg_postgres__order_items')}} oi
 LEFT JOIN session_timing_agg s
   ON s.session_id=e.session_id
 GROUP BY 1,2,3,4,5
+)
+
+SELECT 
+*
+, page_views*100/sessions AS page_view_percentage
+, add_to_carts*100/sessions AS add_to_cart_percentage
+, conversions*100/sessions AS conversion_percentage
+, package_shippeds*100/sessions AS package_shipped_percentage
+FROM events
