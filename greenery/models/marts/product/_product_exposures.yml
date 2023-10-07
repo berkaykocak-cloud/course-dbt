@@ -4,7 +4,7 @@ exposures:
   - name: product_funnel_dashboard
     type: dashboard
     maturity: medium
-    url: https://app.sigmacomputing.com/corise-dbt/workbook/Initial-Trials-LIjZM01XQVQhn6H7zn8eE
+    url: https://app.sigmacomputing.com/corise-dbt/workbook/Product-Funnel-5ATs6swIb7aO5Awwmhuk1g
     tags: ['product']
     description: This is a dashboard that shows statistics about the product funnel
     depends_on: 
